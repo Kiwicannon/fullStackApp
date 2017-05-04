@@ -9,7 +9,7 @@ app.use(bodyParser.json())
 app.use(express.static('./public'))
 
 
-
+const config = require('./config.js');
 
 
 
