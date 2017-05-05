@@ -1,16 +1,25 @@
 <!DOCTYPE html>
 <html lang="en" ng-app="myApp">
     <head>
+        <link href="../favicon.ico" rel="icon" type="image/x-icon" />
         <title></title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <!--<link href="css/style.css" rel="stylesheet">-->
     </head>
     <body ng-controller="mainCtrl">
-    {{test}}
-    <br>
-    {{test1}}
-
+  <form>
+  First name:<br>
+  <input type="text" name="firstname" ng-model="firstname">
+  <br>
+  Favorite Color:<br>
+  <input type="text" name="favcolor" ng-model="favcolor">
+  <br>
+  <input type="radio" name="gender" value="1" checked ng-model="gender"> Male<br>
+  <input type="radio" name="gender" value="2" ng-model="gender"> Female<br>
+  <br>
+  <input type="submit" value="Submit"  ng-click="addToDb()">
+</form> 
 
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.min.js"></script>
 		<script src="app.js"></script>
