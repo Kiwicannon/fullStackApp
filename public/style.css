@@ -1,0 +1,9 @@
+.personData{
+    border-style: solid;
+    width: 100%;
+    text-align: center;
+    margin: 5px;
+}
+.flex-wrapper{
+    display: flex;
+}

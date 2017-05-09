@@ -1,1 +1,1 @@
-select * from favcolor INNER JOIN gender ON gender.id = favcolor.gender;
+select * from favcolor INNER JOIN gender ON gender.id = favcolor.gender ORDER BY userid DESC;

@@ -16,7 +16,7 @@ INSERT INTO gender (gendertype) VALUES
     favColor Table
 *~~~~~~~~~~~~~~~~~~~~*/
 CREATE TABLE favcolor (
-    id SERIAL PRIMARY KEY,
+    userid SERIAL PRIMARY KEY,
     firstname VARCHAR(255),
     color VARCHAR(255),
     gender INT REFERENCES gender(id)
