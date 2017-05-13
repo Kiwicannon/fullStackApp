@@ -10,16 +10,16 @@
 </head>
 
 <body ng-controller="mainCtrl">
-    <form>
+    <form id="myForm">
         First name:<br>
-        <input type="text" name="firstname" ng-model="firstname">
+        <input class="form" type="text" name="firstname" ng-model="firstname">
         <br> Favorite Color:<br>
-        <input type="text" name="favcolor" ng-model="favcolor">
+        <input class="form" type="text" name="favcolor" ng-model="favcolor">
         <br>
         <input type="radio" name="gender" value="1" checked ng-model="gender"> Male<br>
         <input type="radio" name="gender" value="2" ng-model="gender"> Female<br>
         <br>
-        <input type="submit" value="Submit" ng-click="addToDb()">
+        <input type="submit" value="Submit" ng-click="addToDb();reset()">
     </form>
     <div class="flex-wrapper">
         <div class="personData" ng-repeat="a in all" ng-style="{color: a.color}">

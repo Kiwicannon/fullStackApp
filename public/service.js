@@ -4,8 +4,7 @@ angular.module('myApp').service('mainSvc', function($http){
 
 
      this.getAll = function() {
-      return $http.get('/getAll').then(res => {
-        console.log(res)
+      return $http.get('/getAll').then((res) => {
         return res
       })
     }

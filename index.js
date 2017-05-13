@@ -10,10 +10,10 @@ app.use(bodyParser.json())
 app.use(express.static('./public'))
 
 
-const config = require('./config.js');
+// const config = require('./config.js');
 
 const db = massive.connectSync({
-    connectionString: config.elephantsql
+    connectionString: 'postgres://urmtupfk:AaKip6eLc5a7MlEL5dpRKIwYO9hRu4MK@stampy.db.elephantsql.com:5432/urmtupfk'
 })
 
 app.set('db', db)
