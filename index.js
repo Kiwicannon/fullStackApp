@@ -25,31 +25,44 @@ app.set('db', db)
 
 // see if user already exists
 //
+
+// for (var name in buz) {
+//   if (buz.hasOwnProperty(name)) {
+//     console.log('this is fog (' + 
+//       name + ') for sure. Value: ' + buz[name]);
+//   }
+
+
 // app.post('/addToDb/:firstName/:favColor/:gender',
 //     (req, res, next) => {
 //         db.getAll((err, data) => {
-//             // console.log(req.params.firstName, req.params, data)
-//         if(data.includes(req.params) ){
-//             db.addData([
-//                 req.params.firstName,
-//                 req.params.favColor,
-//                 req.params.gender
-//             ], (err, result) => {
-//                 console.log(result[0])
-//                 // if(!result[0])
-//                 if (err) console.log('post endpoint error: ', err)
-//             })
-//             res.end()
-//         } else if(data[0]) {
-//             console.log("User Already Exists")
-//         }
+//             console.log(data.length)
+//             for (var i = 0 ; i < data.length; i++) {
+//                 console.log('started',data[i], data[i].firstname === req.params.firstName)
+//                 if (data[i].firstname === req.params.firstName && data[i].color === req.params.favColor) {
+//                     console.log(1)
+//                     break
+//                     return console.log('user already Exists')
+//                 } else {
+//                     console.log(2)
+//                    return  db.addData([
+//                         req.params.firstName,
+//                         req.params.favColor,
+//                         req.params.gender
+//                     ], (err, result) => {
+
+//                         if (err) console.log('post endpoint error: ', err)
+//                     })
+
+//                     return res.end()
+//                 }
+//             }
 //         })
 //     })
+
+
 app.post('/addToDb/:firstName/:favColor/:gender',
     (req, res, next) => {
-       
-
-         
             db.addData([
                 req.params.firstName,
                 req.params.favColor,
