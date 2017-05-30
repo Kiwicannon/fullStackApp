@@ -1,20 +1,42 @@
 <!DOCTYPE html>
 <html lang="en" ng-app="myApp">
-    <head>
-        <title></title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <!--<link href="css/style.css" rel="stylesheet">-->
-    </head>
-    <body ng-controller="mainCtrl">
-    {{test}}
-    <br>
-    {{test1}}
 
+<head>
+    <!--<link href="../favicon.ico" rel="icon" type="image/x-icon" />-->
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+   <link rel="shortcut icon" href=".././favicon.ico" />
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body ng-controller="mainCtrl">
+    <form  name="myForm" id="myForm">
+        First name:<br>
+        <input class="form" type="text" name="firstname" ng-model="firstname">
+        <br> Favorite Color:<br>
+        <input class="form" type="text" name="favcolor" ng-model="favcolor">
+        <br>
+        <input type="radio" name="gender" value="1" checked ng-model="gender"> Male<br>
+        <input type="radio" name="gender" value="2" ng-model="gender"> Female<br>
+        <br>
+        <input type="submit" value="Submit" ng-click="addToDb();reset()">
+    </form>
+    <div class="flex-wrapper">
+        <div class="personData" ng-repeat="a in all" ng-style="{color: a.color}">
+            <div>{{a.firstname}}</div>
+            <div>{{a.color}}</div>
+            <div>{{a.gendertype}}</div>
+            <button class="fa fa-trash" ng-click="delete(a.userid)" aria-hidden="true" ></button>
+        </div>
+    </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.min.js"></script>
-		<script src="app.js"></script>
-		<script src="controller.js"></script>
-		<script src="service.js"></script>
-    </body>
+    <script src="https://use.fontawesome.com/59b99a4e24.js"></script>
+    <script src="app.js"></script>
+    <script src="controller.js"></script>
+    <script src="service.js"></script>
+
+</body>
+
 </html>

@@ -1,10 +1,10 @@
 {
-  "name": "fullStackApp",
+  "name": "fullstackapp",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
   },
   "repository": {
     "type": "git",
@@ -19,7 +19,11 @@
   "homepage": "https://github.com/Kiwicannon/fullStackApp#readme",
   "dependencies": {
     "body-parser": "^1.17.1",
+    "cors": "^2.8.3",
     "express": "^4.15.2",
-    "massive": "^2.6.0"
-  }
+    "massive": "^2.6.0",
+    "now": "^5.2.3"
+  },
+  "devDependencies": {},
+  "description": ""
 }
