@@ -4,7 +4,11 @@
     text-align: center;
     margin: 20px 5px;
     height: 55px;
+<<<<<<< HEAD
     padding-bottom: 25px;
+=======
+    padding-bottom: 5px;
+>>>>>>> c8e9496f2b3cd21911fa1375ab2e80a53a557bd1
     padding-top: 5px;
 }
 .flex-wrapper{

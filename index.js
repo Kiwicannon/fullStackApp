@@ -68,8 +68,7 @@ app.post('/addToDb/:firstName/:favColor/:gender',
                 req.params.favColor,
                 req.params.gender
             ], (err, result) => {
-                console.log(result[0])
-                // if(!result[0])
+              
                 if (err) console.log('post endpoint error: ', err)
             })
             res.end()
