@@ -13,7 +13,8 @@ angular.module('myApp').controller('mainCtrl', function ($scope, mainSvc) {
     $scope.addToDb = () => {
         mainSvc.addToDb($scope.firstname, $scope.favcolor, $scope.gender).then((res) => {
             console.log('then is working')
-            setTimeout(function () {
+            setTimeout( () => {
+                console.log('timeout fired')
                 $scope.getAll();
             }, 100);
 
@@ -33,7 +34,7 @@ angular.module('myApp').controller('mainCtrl', function ($scope, mainSvc) {
     $scope.delete = (userid) => {
        mainSvc.delete(userid).then((res) => {
             console.log('deleted')
-            setTimeout(function () {
+            setTimeout( () => {
                 $scope.getAll();
             }, 100);
 
