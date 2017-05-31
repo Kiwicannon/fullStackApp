@@ -29,13 +29,28 @@
             <div>{{a.firstname}}</div>
             <div>{{a.color}}</div>
             <div>{{a.gendertype}}</div>
-
+            <button ng-click="editUser(a.userid, a.firstname, a.color, a.gendertype); display()">Edit</button>
             <button class="fa fa-trash" ng-click="delete(a.userid)" aria-hidden="true" ></button>
         </div>
+    </div>
+    <div id="edit" class="edit" style="display:none">
+        <form  name="editForm" id="editForm">
+
+        First name:<br>
+        <input class="form" type="text" name="firstname" ng-model="editfirstname" placeholder="{{userData.name}}">
+        <br> Favorite Color:<br>
+        <input class="form" type="text" name="favcolor" ng-model="editfavcolor" placeholder="{{userData.color}}">
+        <br>
+        <input type="radio" name="gender" value="1" checked ng-model="editgender"> Male<br>
+        <input type="radio" name="gender" value="2" ng-model="editgender"> Female<br>
+        <br>
+        <input type="submit" value="Submit" ng-click="edit();resetEdit(); removedisplay()">
+    </form>
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.min.js"></script>
     <script src="https://use.fontawesome.com/59b99a4e24.js"></script>
+    <script src="jquery.js"></script>
     <script src="app.js"></script>
     <script src="controller.js"></script>
     <script src="service.js"></script>

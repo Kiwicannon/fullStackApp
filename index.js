@@ -93,6 +93,18 @@ db.delete([req.params.userid], (err, res) => {
 res.end()
 })
 
+app.put(`/update/:userid/:name/:color/:gender`, (req, res, next) => {
+    db.update([
+        req.params.userid,
+        req.params.name,
+        req.params.color,
+        req.params.gender
+    ], (err, result) => {
+        if (err) console.log('edit fail: ', err)
+    })
+    res.end()
+})
+
 
 
 

@@ -4,11 +4,7 @@
     text-align: center;
     margin: 20px 5px;
     height: 55px;
-<<<<<<< HEAD
     padding-bottom: 25px;
-=======
-    padding-bottom: 5px;
->>>>>>> c8e9496f2b3cd21911fa1375ab2e80a53a557bd1
     padding-top: 5px;
 }
 .flex-wrapper{
@@ -24,4 +20,19 @@
 }
 .form{
     font-size: 15px;
+}
+.edit{
+    z-index: 9999;
+    position: absolute;
+    top: 340px;
+    right: 340px;
+    font-size: 50px;
+    background: grey;
+    width: 500px;
+    height: 500px;
+}
+#editForm{
+    padding-top: 80px;
+    text-align: center;
+    font-size: 40px;
 }

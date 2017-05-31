@@ -11,6 +11,9 @@ angular.module('myApp').service('mainSvc', function($http){
     }
 
     this.delete = (userid)  => {
-      console.log('service')
       return $http.delete(`/delete/${userid}`)}
+
+    this.edit = (userid, name, color, gender) =>{
+      return $http.put(`/update/${userid}/${name}/${color}/${gender}`)
+    }
 })
