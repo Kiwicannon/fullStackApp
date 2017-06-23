@@ -29,6 +29,7 @@
             <div>{{a.firstname}}</div>
             <div>{{a.color}}</div>
             <div>{{a.gendertype}}</div>
+            <div>{{a.userid}}</div>
             <button ng-click="editUser(a.userid, a.firstname, a.color, a.gendertype); display()">Edit</button>
             <button class="fa fa-trash" ng-click="delete(a.userid)" aria-hidden="true" ></button>
         </div>
@@ -37,9 +38,9 @@
         <form  name="editForm" id="editForm">
 
         First name:<br>
-        <input class="form" type="text" name="firstname" ng-model="editfirstname" placeholder="{{userData.name}}">
+        <input id="name" class="form" type="text" name="firstname" ng-model="editfirstname">
         <br> Favorite Color:<br>
-        <input class="form" type="text" name="favcolor" ng-model="editfavcolor" placeholder="{{userData.color}}">
+        <input id="color" class="form" type="text" name="favcolor" ng-model="editfavcolor" >
         <br>
         <input type="radio" name="gender" value="1" checked ng-model="editgender"> Male<br>
         <input type="radio" name="gender" value="2" ng-model="editgender"> Female<br>

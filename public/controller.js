@@ -1,13 +1,8 @@
 angular.module('myApp').controller('mainCtrl', function ($scope, mainSvc) {
-    $scope.test = 'controller is working'
-    $scope.test1 = mainSvc.test1
 
-   
+
     $scope.display = () => {
-        console.log('display')
-       
         document.getElementById("edit").style.display = "block"
-        
     }
     $scope.removedisplay = () => {
         document.getElementById("edit").style.display = "none"
@@ -21,9 +16,8 @@ angular.module('myApp').controller('mainCtrl', function ($scope, mainSvc) {
 
     $scope.addToDb = () => {
         mainSvc.addToDb($scope.firstname, $scope.favcolor, $scope.gender).then((res) => {
-            setTimeout( () => {
-                $scope.getAll();
-            }, 100);
+
+            $scope.getAll();
 
         })
 
@@ -42,29 +36,29 @@ angular.module('myApp').controller('mainCtrl', function ($scope, mainSvc) {
 
     }
 
-     $scope.editUser = (userid, name, color, gender) => {
-        var userId = userid
-        
-        $scope.userData = (userid, name, color, gender)
-        console.log($scope.userData)
+    $scope.editUser = (userid, name, color, gender) => {
+        document.getElementById("name").value = name;
+        document.getElementById("color").value = color;
+        var id = userid
         console.log(userid, name, color, gender)
-    $scope.edit = (userid) =>{
-        mainSvc.edit(userId, $scope.editfirstname, $scope.editfavcolor, $scope.editgender).then((res) => {
-            setTimeout( () => {
-                $scope.getAll();
-            }, 100);
-        })
-    }
+        $scope.edit = (id) => {
+            console.log(userid, $scope.editfirstname, $scope.editfavcolor, $scope.editgender)
+            mainSvc.edit(userid, $scope.editfirstname, $scope.editfavcolor, $scope.editgender).then((res) => {
+                setTimeout(() => {
+                    $scope.getAll();
+                }, 100);
+            })
+        }
 
     }
 
 
     $scope.delete = (userid) => {
-       mainSvc.delete(userid).then((res) => {
-            setTimeout( () => {
+        mainSvc.delete(userid).then((res) => {
+            setTimeout(() => {
                 $scope.getAll();
             }, 100);
 
-        }) 
+        })
     }
 })

@@ -7,6 +7,9 @@ const express = require('express'),
 const app = module.exports = express();
 
 app.use(bodyParser.json())
+app.use(bodyParser.urlencoded({
+    extended: true
+}))
 app.use(express.static('./public'))
 
 
@@ -61,21 +64,21 @@ app.set('db', db)
 //     })
 
 
-app.post('/addToDb/:firstName/:favColor/:gender',
+app.post('/api/person',
     (req, res, next) => {
-            db.addData([
-                req.params.firstName,
-                req.params.favColor,
-                req.params.gender
-            ], (err, result) => {
-              
-                if (err) console.log('post endpoint error: ', err)
-            })
-            res.end()
+        db.addData([
+            req.body.firstName,
+            req.body.favColor,
+            req.body.gender
+        ], (err, result) => {
+
+            if (err) console.log('post endpoint error: ', err)
         })
+        res.end()
+    })
 
 
-app.get('/getAll', (req, res, next) => {
+app.get('/api/persons', (req, res, next) => {
     db.getAll((err, data) => {
         if (err) {
             res.status(500).json(err);
@@ -86,19 +89,19 @@ app.get('/getAll', (req, res, next) => {
     });
 })
 
-app.delete('/delete/:userid',(req, res, next) => {
-db.delete([req.params.userid], (err, res) => {
-    if(err) console.log('failed to delete', err)
-})
-res.end()
+app.delete('/api/person/:userid', (req, res, next) => {
+    db.delete([req.params.userid], (err, res) => {
+        if (err) console.log('failed to delete', err)
+    })
+    res.end()
 })
 
-app.put(`/update/:userid/:name/:color/:gender`, (req, res, next) => {
+app.put(`/api/person/:userid`, (req, res, next) => {
     db.update([
         req.params.userid,
-        req.params.name,
-        req.params.color,
-        req.params.gender
+        req.body.name,
+        req.body.color,
+        req.body.gender
     ], (err, result) => {
         if (err) console.log('edit fail: ', err)
     })
